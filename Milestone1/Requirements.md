@@ -1,13 +1,13 @@
-Milestone 1. Project Plan Complete
+#Milestone 1. Project Plan Complete
 Role: Project Manager - Requirements
 
--- EASEL - PROJECT CHARTER --
+##-- EASEL - PROJECT CHARTER --
 
 Easel is a software application that runs in the cloud. Users can use this application similarly to Canvas, which allows for the creation of classess and assignments, quizzes, and exams within those classes in order to create a seamless, integrated gradebook.
 
 Chat between classmates and share files--collaboration is key for academic success.
 
--- Business Proposition --
+##-- Business Proposition --
 
 Client: Mark Seaman has contracted The Boys™ in order to create an application that will manage grades and assignments in a manner similar to Canvas.
 
@@ -15,7 +15,7 @@ Author Value: Create, using complex database structures, an easy-to-use applicat
 
 Business Value: With online schooling, an application like this would introduce another competitor into the market and inspire competition. This will allow students to thrive without the bounds of technology keeping them down.
 
--- Project Scope and Budget --
+##-- Project Scope and Budget --
 
 Easel's Priorities:
 
@@ -31,7 +31,7 @@ Project Features:
     - File Sharing: In order to submit many assignments, a file of certain type is needed. The process for doing so should be seamess and easy to understand for even the most technically illiterate.
     - Chat: Ability to create discussion/chats boards within and outside classes in order to inspire collaboration between students.
     
--- Our Team --
+##-- Our Team --
 
 Development Team (First Rotation):
 
