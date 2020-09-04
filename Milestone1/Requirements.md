@@ -35,10 +35,10 @@ Project Features:
 
 Development Team (First Rotation):
 
-Erik Halenkamp - Requirements
-Yusuf Kortobi - Design
-Junwen Huang - Code
-Asepha Shaeffer - Test
+    - Erik Halenkamp - Requirements
+    - Yusuf Kortobi - Design
+    - Junwen Huang - Code
+    - Asepha Shaeffer - Test
 
 Communication Plan:
 
