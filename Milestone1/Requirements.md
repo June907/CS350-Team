@@ -27,7 +27,7 @@ Features will be adjusted throughout the milestone and must be constantly negoti
 
 Project Features:
 
-    - Class -> Student Structure: This project will be organized similarly to Canvas in order to maximize search efficiency. Classess will enroll students and store assignments, which a student will create a new instance of tailored specifically to how they perform. That grade is stored and helps to calculate their GPA, while teachers can adjust the balance on specific.
+    - Class -> Student Structure: This project will be organized similarly to Canvas in order to maximize search efficiency. Classess will enroll students and store assignments, which a student will create a new instance of tailored specifically to how they perform. That grade is stored and helps to calculate their GPA, while teachers can adjust the balance on specific categories.
     - File Sharing: In order to submit many assignments, a file of certain type is needed. The process for doing so should be seamess and easy to understand for even the most technically illiterate.
     - Chat: Ability to create discussion/chats boards within and outside classes in order to inspire collaboration between students.
     
