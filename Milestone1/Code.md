@@ -20,7 +20,7 @@ We all have our own GitHub account, we will use it to store our code and we will
 
 The Canvas Grade Book client website will be built so that the automatic publishing of Github Pages will make it publicly available. To avoid any additional setup we will be using the existing Github Pages in the repo at "https://github.com/June907/CS350-Team".
 
-The customer website will be located at https://secret-refuge-89836.herokuapp.com/.
+The customer website will be located at https://easel-team-beta-350.herokuapp.com/.
 
 # Decide how to publish your project docs
 
