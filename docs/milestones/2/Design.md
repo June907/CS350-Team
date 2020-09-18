@@ -44,7 +44,8 @@ delete all posts. Can create and edit their own posts.
 -   The design for the app requires designing the data models and the
     Views that will be implemented.
 
-(hierarchy.png)
+(![Image of
+Wireframe](https://github.com/June907/CS350-Team/tree/master/docs/milestones/2/hierarchy.png)
 
 ### Data models
 
