@@ -25,7 +25,7 @@ SECRET_KEY = 'e+0!wt=2+8=w0#@mt+8r!6u84%mzj4%67@9km3-^ra8^1z^@f0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['teamcs350easel.pythonanywhere.com']
 
 
 # Application definition
@@ -119,4 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
+
+STATIC_ROOT='/home/teamcs350Easel/CS350-Team/project/static'
