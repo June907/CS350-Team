@@ -10,7 +10,7 @@ URL: https://https://github.com/June907/CS350-Team/tree/master/docs/milestones/3
 
 Documents: Documents/swplan/BookBuilder
 
-Git Repo: Mark-Seaman.github.io
+Git Repo: https://github.com/June907/CS350-Team
 
 Milestone 3. Core Features Implemented
 Role: Project Manager - Requirements
