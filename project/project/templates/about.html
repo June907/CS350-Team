@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>Current Registered Users</h1>
 {% for user in users %}
-<h1>{{ user.name }}</h1>
-<h2>ID: {{ user.id }}</h2>
+<h2>{{ user.username }}</h2>
+<p>ID: {{ user.id }}</p>
 {% endfor %}
 {% endblock content %}
