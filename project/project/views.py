@@ -7,13 +7,13 @@ def home(request):
     context = {
         'users': User.objects.all()
     }
-    return render(request, 'home.html', context)
+    return render(request, 'project/home.html', context)
 
 def about(request):
     context = {
         'users': User.objects.all()
     }
-    return render(request, 'about.html', context)
+    return render(request, 'project/about.html', context)
 
 #class HomePageView(ListView):
 #    model=Post
