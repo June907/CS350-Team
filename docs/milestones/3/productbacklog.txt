@@ -1,6 +1,6 @@
 Features List                   Status              Completed dates
 Deloy a website                 Done                Sep.16/2020
-Sign up page                    Doing
+Sign up page                    Done                Oct.2/2020
 Login page                      Doing
 Change password                 To do
 Post a discusion                To do
