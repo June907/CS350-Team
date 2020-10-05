@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 #        return self.title
 
 class Course(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=40)
     instructor = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
