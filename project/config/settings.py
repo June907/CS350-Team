@@ -122,3 +122,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT='/home/teamcs350Easel/CS350-Team/project/static'
+
+LOGIN_REDIRECT_URL = 'home'
