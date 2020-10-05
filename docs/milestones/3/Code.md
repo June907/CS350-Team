@@ -3,9 +3,7 @@
 ## Developer: Erik Halenkamp
 
 
-## PROJECT INFO
-
-* [Software Project Plan - Easel](../Index.md)
+## PROJECT INFO - Easel
 
 * Other Roles - [Requirements.md](Requirements.md)
 , [Design.md](Design.md)
