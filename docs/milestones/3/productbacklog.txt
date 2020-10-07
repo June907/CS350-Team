@@ -1,13 +1,13 @@
 Features List                   Status              Completed dates
 Deloy a website                 Done                Sep.16/2020
 Sign up page                    Done                Oct.2/2020
-Login page                      Doing
-Change password                 To do
-Post a discusion                To do
-Responed to a discusion         To do
-edit my discusion               To do
-Give out announcement           To do
-Responed to an announcement     To do
-Give out assignment             To do
-Turn in assignment              To do
+Login page                      Done                Oct.6/2020
+Change password                 Doing
+Post a discusion                Doing
+Responed to a discusion         Doing
+edit my discusion               Doing
+Give out announcement           Doing
+Responed to an announcement     Doing
+Give out assignment             Doing
+Turn in assignment              Doing
 
