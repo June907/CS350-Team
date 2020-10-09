@@ -25,7 +25,7 @@ SECRET_KEY = 'e+0!wt=2+8=w0#@mt+8r!6u84%mzj4%67@9km3-^ra8^1z^@f0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['teamcs350easel.pythonanywhere.com', 'localhost', '12.0.0.1']
+ALLOWED_HOSTS = ['teamcs350easel.pythonanywhere.com', 'localhost', '12.0.0.1','*']
 
 
 # Application definition
@@ -123,4 +123,5 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT='/home/teamcs350Easel/CS350-Team/project/static'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'studentPage'
+LOGOUT_REDIRECT_URL= 'home'
