@@ -12,12 +12,14 @@
     <div class="sidenav">
         <a href="#"><i class="fa fa-fw fa-user"></i>Studnet</a>
         <a href="#"><i class="fa fa-fw fa-calendar"></i>Calendar</a>
-        <a href="#"><i class="fa fa-fw fa-book"></i>Class</a>
+        <a href="{% url 'course_add' %}"><i class="fa fa-fw fa-book"></i>Class</a>
         <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
+        <a href="{% url 'logout' %}">Log Out</a>
       </div>
     <div class="main">
     <h1>Dashboard</h1>
     <p>Hi {{ user.username}}</p>
+
     </div>
     
 </body>
