@@ -1,14 +1,14 @@
 from django.views.generic import ListView,DetailView,TemplateView
 from django.views.generic.edit import CreateView
 from .models import Course
-from django.shortcuts import render
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
 
 
 def home(request):
     context = {
-        'users': User.objects.all()
+        'user': request.user
     }
     return render(request, 'project/home.html', context)
 
@@ -21,9 +21,17 @@ def about(request):
 
 
 class courseAddView(CreateView):
-    template_name="users/course_add.html"
     model=Course
-    fields='__all__'
+    fields=['title']
+    
+    success_url = "{% url 'studentPage' %}"
+    
+    def form_valid(self, form):
+        form.instance.instructor = self.request.user
+        new_group, created = Group.objects.get_or_create(name=form.instance.title)
+        form.instance.group = new_group
+        self.request.user.groups.add(new_group)
+        return super().form_valid(form)
 
 
 #def my_view(request):

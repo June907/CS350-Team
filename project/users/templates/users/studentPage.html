@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
 <html>
+
 <head>
 
     <meta charset="utf-8">
@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/studentBase.css' %}">
 </head>
+
 <body>
     <div class="sidenav">
-        <a href="#"><i class="fa fa-fw fa-user"></i>Studnet</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i>Student</a>
         <a href="#"><i class="fa fa-fw fa-calendar"></i>Calendar</a>
-        <a href="{% url 'course_add' %}"><i class="fa fa-fw fa-book"></i>Class</a>
+        <a href="{% url 'course_add' %}"><i class="fa fa-fw fa-book"></i>Courses</a>
         <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
         <a href="{% url 'logout' %}">Log Out</a>
-      </div>
-    <div class="main">
-    <h1>Dashboard</h1>
-    <p>Hi {{ user.username}}</p>
-
     </div>
-    
+    <div class="main">
+        <h1>Dashboard</h1>
+        <h2>Hi {{ user.username}}</h2>
+        <br>
+        <h2>Courses:</h2>
+        <br>
+        {% if courses %}
+        {% for course in courses %}
+        {% if course.instructor == user %}
+        <h3>{{ course.title }} - Instructor</h3>
+        {% else %}
+        <h3>{{ course.title }}</h3>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
+
+
 </body>
 
 </html>

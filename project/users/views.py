@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
+from project.models import Course
 
 def register(request):
     if request.method == 'POST':
@@ -15,3 +16,8 @@ def register(request):
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
+def studentPage(request):
+    context = {
+        'courses': Course.objects.filter(group__in = request.user.groups.all())
+    }
+    return render(request, 'users/studentPage.html', context)
