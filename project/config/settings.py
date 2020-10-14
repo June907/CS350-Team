@@ -123,5 +123,5 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT='/home/teamcs350Easel/CS350-Team/project/static'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'studentPage'
 LOGOUT_REDIRECT_URL= 'home'

@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from users import views as user_views
 from django.contrib.auth import views as auth_views
-from .views import courseAddView
+from .views import courseAddView, TestClassView
 
 urlpatterns= [
 #    path('post/<int:pk>/',HomeDetailView.as_view(),name='post_detail'),
@@ -16,6 +16,7 @@ urlpatterns= [
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('studentPage/',user_views.studentPage,name='studentPage'),
     path('add',courseAddView.as_view(template_name='project/course_add.html'),name='course_add'),
+    path('studentPage/TestClass/', TestClassView.as_view(),name='TestClass'),
     #path('<int:pk>', StudentDetailView.as_view(), name='student_detail'),
     
 

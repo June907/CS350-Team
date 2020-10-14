@@ -24,7 +24,7 @@ class courseAddView(CreateView):
     model=Course
     fields=['title']
     
-    success_url = "{% url 'studentPage' %}"
+    success_url = '/'
     
     def form_valid(self, form):
         form.instance.instructor = self.request.user
@@ -32,6 +32,18 @@ class courseAddView(CreateView):
         form.instance.group = new_group
         self.request.user.groups.add(new_group)
         return super().form_valid(form)
+
+class TestClassView(TemplateView):
+    template_name='users/TestClass.html'
+
+#class studentListView(ListView):
+    #model=Course
+    #context = {
+        #'students': User.objects.filter(groups__name=Course.title)
+   # }
+    #def get(request):
+        #return render(request, 'users/'+ Course.title, context)
+
 
 
 #def my_view(request):

@@ -17,22 +17,18 @@
         <a href="#"><i class="fa fa-fw fa-envelope"></i>Inbox</a>
         <a href="{% url 'logout' %}">Log Out</a>
     </div>
+    
+
     <div class="main">
+        <div class="sidebar">
+            <a href="#about">Student List</a>
+            <a href="#services">Class Disscusion</a>
+            <a href="#clients">Assignments</a>
+            <a href="#contact">Contact</a>
+          </div>
         <h1>Dashboard</h1>
         <h2>Hi {{ user.username}}</h2>
-        <br>
-        <h2>Courses:</h2>
-        <br>
-        {% if courses %}
-        {% for course in courses %}
-        {% if course.instructor == user %}
-        <h3><a href="{{ course.title }}">{{ course.title }}</a> - Instructor</h3>
         
-        {% else %}
-        <h3>{{ course.title }} - Student</h3>
-        {% endif %}
-        {% endfor %}
-        {% endif %}
     </div>
 
 

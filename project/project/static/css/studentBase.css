@@ -27,3 +27,29 @@
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
   }
+  body {
+    font-family: "Lato", sans-serif;
+  }
+
+  .sidebar {
+    width: 130px;
+    position: fixed;
+    z-index: 1;
+    top: 20px;
+    left: 10px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #064579;
+  }
