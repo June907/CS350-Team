@@ -30,18 +30,16 @@
         <h1>Discussion Board</h1>
         <h2>Hi {{ user.username}}</h2>
         {% block content %}
-          {% for post in object_list %}
+          
           <div class="post-entry">
-            <h2><a href="{% url 'discussion_detail' post.pk %}">{{ post.title }}</a></h2>
+            <h2>{{ post.title }}</a></h2>
             <p>{{ post.body }}</p>
 
           </div>
+          <p><a href="{% url 'discussion_edit' post.pk %}">+ Edit Discussion Post</a></p>
+          <p><a href="{% url 'discussion_delete' post.pk %}">+ Delete Discussion Post</a></p>
           
-          {% endfor %}
-          <div class="nav-right">
-            <a href="{% url 'discussion_new' %}">+ New Discussion Post</a>
-
-          </div>
+          
         {% endblock content %}  
 
     </div>

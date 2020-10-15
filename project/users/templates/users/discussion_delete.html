@@ -30,18 +30,12 @@
         <h1>Discussion Board</h1>
         <h2>Hi {{ user.username}}</h2>
         {% block content %}
-          {% for post in object_list %}
-          <div class="post-entry">
-            <h2><a href="{% url 'discussion_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
-
-          </div>
-          
-          {% endfor %}
-          <div class="nav-right">
-            <a href="{% url 'discussion_new' %}">+ New Discussion Post</a>
-
-          </div>
+        <h1> Delete Post</h1>
+        <form action="" method="POST">{% csrf_token %}
+            <p>Are you sure you want to delete "{{post.title}}"?</p>
+            <input type="submit" value="Confirm">
+        </form>
+       
         {% endblock content %}  
 
     </div>

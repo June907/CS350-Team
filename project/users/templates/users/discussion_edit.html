@@ -27,22 +27,13 @@
             <a href="#clients">Assignments</a>
             <a href="#contact">Contact</a>
           </div>
-        <h1>Discussion Board</h1>
-        <h2>Hi {{ user.username}}</h2>
-        {% block content %}
-          {% for post in object_list %}
-          <div class="post-entry">
-            <h2><a href="{% url 'discussion_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
-
-          </div>
-          
-          {% endfor %}
-          <div class="nav-right">
-            <a href="{% url 'discussion_new' %}">+ New Discussion Post</a>
-
-          </div>
-        {% endblock content %}  
+          {% block content %}
+       <h1>Edit Post</h1>
+       <form action="" method="POST">{% csrf_token %}
+           {{ form.as_p }}
+           <input type="submit" value="Update">
+       </form>
+       {% endblock content %}
 
     </div>
 

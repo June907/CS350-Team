@@ -30,18 +30,14 @@
         <h1>Discussion Board</h1>
         <h2>Hi {{ user.username}}</h2>
         {% block content %}
-          {% for post in object_list %}
-          <div class="post-entry">
-            <h2><a href="{% url 'discussion_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
+          <h1>New Post</h1>
+          <form action="" method="POST">{% csrf_token %}
+          {{ form.as_p }}
+          <input type="submit" value="Save">
+        </form>
 
-          </div>
           
-          {% endfor %}
-          <div class="nav-right">
-            <a href="{% url 'discussion_new' %}">+ New Discussion Post</a>
-
-          </div>
+          
         {% endblock content %}  
 
     </div>

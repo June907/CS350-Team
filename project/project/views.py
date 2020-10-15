@@ -1,5 +1,6 @@
 from django.views.generic import ListView,DetailView,TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from .models import Course, Post
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
@@ -39,6 +40,25 @@ class TestClassView(TemplateView):
 class discussionView(ListView):
     model=Post
     template_name='users/discussion.html'
+
+class discussionDetailView(DetailView):
+    model=Post
+    template_name='users/discussion_detail.html'
+
+class discussionCreateView(CreateView):
+    model=Post
+    template_name='users/discussion_new.html'
+    fields=['title', 'author', 'body']
+
+class discussionUpdateView(UpdateView):
+    model=Post
+    template_name='users/discussion_edit.html'
+    fields=['title', 'body']
+
+class discussionDeleteView(DeleteView):
+    model=Post
+    template_name='users/discussion_delete.html'
+    success_url= reverse_lazy('users/discussion')
     
 
 #class studentListView(ListView):

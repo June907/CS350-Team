@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from users import views as user_views
 from django.contrib.auth import views as auth_views
-from .views import courseAddView, TestClassView, discussionView
+from .views import courseAddView, TestClassView, discussionView, discussionDetailView, discussionCreateView, discussionUpdateView, discussionDetailView
 
 urlpatterns= [
 #    path('post/<int:pk>/',HomeDetailView.as_view(),name='post_detail'),
@@ -18,6 +18,11 @@ urlpatterns= [
     path('add',courseAddView.as_view(template_name='project/course_add.html'),name='course_add'),
     path('studentPage/TestClass/', TestClassView.as_view(),name='TestClass'),
     path('discussion',discussionView.as_view(), name='discussion'),
+    path('discussion/<int:pk>',discussionDetailView.as_view(), name='discussion_detail'),
+    path('discussion/new/', discussionCreateView.as_view(), name='discussion_new'),
+    path('discussion/<int:pk>/edit/', discussionUpdateView.as_view(), name='discussion_edit'),
+    path('discussion/<int:pk>/delete/',discussionDetailView.as_view(), name='discussion_delete'),
+
     #path('<int:pk>', StudentDetailView.as_view(), name='student_detail'),
     
 
