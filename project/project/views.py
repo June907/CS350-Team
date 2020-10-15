@@ -1,6 +1,6 @@
 from django.views.generic import ListView,DetailView,TemplateView
 from django.views.generic.edit import CreateView
-from .models import Course
+from .models import Course, Post
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
@@ -35,6 +35,11 @@ class courseAddView(CreateView):
 
 class TestClassView(TemplateView):
     template_name='users/TestClass.html'
+
+class discussionView(ListView):
+    model=Post
+    template_name='users/discussion.html'
+    
 
 #class studentListView(ListView):
     #model=Course
