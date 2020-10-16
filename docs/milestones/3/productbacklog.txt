@@ -3,11 +3,11 @@ Deloy a website                 Done                Sep.16/2020
 Sign up page                    Done                Oct.2/2020
 Login page                      Done                Oct.6/2020
 Change password                 Doing
-Post a discusion                Doing
-Responed to a discusion         Doing
-edit my discusion               Doing
+Post a discusion                Done
+Responed to a discusion         Done
+edit my discusion               Done
+Delete a discussion             Done
 Give out announcement           Doing
-Responed to an announcement     Doing
 Give out assignment             Doing
 Turn in assignment              Doing
 
