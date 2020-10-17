@@ -3,7 +3,6 @@
 
 ## PROJECT INFO
 
-* [Software Project Plan - Book Builder](../Index.md)
 
 * Other Roles - [Requirements.md](Requirements.md)
 , [Design.md](Design.md)
@@ -14,7 +13,7 @@
 
 * File: Milestone-4/Code.md
 
-* URL: https://github.com/Mark-Seaman/Mark-Seaman.github.io/blob/master/BookBuilder/Milestone-4/Code.md
+* URL: https://github.com/June907/CS350-Team/edit/master/docs/milestones/4/Code.md
 
 * Documents: Documents/swplan/BookBuilder
 
@@ -31,24 +30,27 @@ Role: Programmer - Code
 
 Goal: Write code - core features
 
-* Implement User Stories
-* Test-driven workflow
-* Implementation Cycle - Test, Fix, Extend, Improve
-* Implement all core features
+* ~~Implement User Stories
+* ~~Test-driven workflow
+* ~~Implementation Cycle - Test, Fix, Extend, Improve
+* ~~Implement all core features
 
 
 
-## Book Builder - Write code - core features
+## Easel - Write code - core features
 
 
 
 ### Implement User Stories
+All done
 
 
 ### Test-driven workflow
-
+For test-driven, we have created a test course under the Easel project to test if we can create a class successfully, moving on, we also created test discussion board to see if the CURD is working for all the discussion views. All the features above are implement successfully with test. However, creating an assignment for professor still returns error, and turn in assignment for students are still a issue, it will be fixed in the next milestone. 
 
 ### Implementation Cycle - Test, Fix, Extend, Improve
 
 
+
 ### Implement all core features
+All done
