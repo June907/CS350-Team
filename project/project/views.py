@@ -1,7 +1,7 @@
 from django.views.generic import ListView,DetailView,TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Course, Post
+from .models import *
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
@@ -38,6 +38,7 @@ class TestClassView(TemplateView):
     template_name='users/TestClass.html'
 
 class discussionView(ListView):
+
     model=Post
     template_name='users/discussion.html'
 
@@ -59,15 +60,30 @@ class discussionDeleteView(DeleteView):
     model=Post
     template_name='users/discussion_delete.html'
     success_url= reverse_lazy('users/discussion')
+
+class assignmentView(ListView):
+    model=Assignment
+    template_name='users/assignment.html'
+    
+class assignmentCreateView(CreateView):
+    model=Assignment
+    template_name='users/assignment_create.html'
+    fields=['title','due_date', 'points_possible']
+    success_url=reverse_lazy('users/assignment')
     
 
-#class studentListView(ListView):
-    #model=Course
-    #context = {
-        #'students': User.objects.filter(groups__name=Course.title)
-   # }
-    #def get(request):
-        #return render(request, 'users/'+ Course.title, context)
+    
+
+def studentListView(request,url_name):
+    model=Course
+    url_name=Course.title
+    
+    
+    context = {
+        'students': User.objects.filter(groups__name=Course.title),
+        'url_name': url_name
+    }
+    return render(request, 'users/studentList.html', context)
 
 
 

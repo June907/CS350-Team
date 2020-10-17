@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from users import views as user_views
 from django.contrib.auth import views as auth_views
-from .views import courseAddView, TestClassView, discussionView, discussionDetailView, discussionCreateView, discussionUpdateView, discussionDetailView
+from .views import *
 
 urlpatterns= [
 #    path('post/<int:pk>/',HomeDetailView.as_view(),name='post_detail'),
@@ -17,11 +17,14 @@ urlpatterns= [
     path('studentPage/',user_views.studentPage,name='studentPage'),
     path('add',courseAddView.as_view(template_name='project/course_add.html'),name='course_add'),
     path('studentPage/TestClass/', TestClassView.as_view(),name='TestClass'),
-    path('discussion',discussionView.as_view(), name='discussion'),
-    path('discussion/<int:pk>',discussionDetailView.as_view(), name='discussion_detail'),
-    path('discussion/new/', discussionCreateView.as_view(), name='discussion_new'),
-    path('discussion/<int:pk>/edit/', discussionUpdateView.as_view(), name='discussion_edit'),
-    path('discussion/<int:pk>/delete/',discussionDetailView.as_view(), name='discussion_delete'),
+    path('studentPage/TestClass/discussion',discussionView.as_view(), name='discussion'),
+    path('studentPage/TestClass/discussion/<int:pk>',discussionDetailView.as_view(), name='discussion_detail'),
+    path('studentPage/TestClass/discussion/new/', discussionCreateView.as_view(), name='discussion_new'),
+    path('studentPage/TestClass/discussion/<int:pk>/edit/', discussionUpdateView.as_view(), name='discussion_edit'),
+    path('studentPage/TestClass/discussion/<int:pk>/delete/',discussionDetailView.as_view(), name='discussion_delete'),
+    path('studentPage/TestClass/studentList/', views.studentListView, name='studentList'),
+    path('assignment/', assignmentView.as_view(), name='assignment'),
+    path('assignment/new/', assignmentCreateView.as_view(), name='assignment_create'),
 
     #path('<int:pk>', StudentDetailView.as_view(), name='student_detail'),
     

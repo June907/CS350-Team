@@ -1,0 +1,11 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+<h1>Current Registered Users</h1>
+{{ url_name }}
+{% for student in students %}
+
+<h2>{{ student.username }}</h2>
+<p>ID: {{ student.id }}</p>
+{% endfor %}
+{% endblock content %}
