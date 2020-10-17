@@ -30,10 +30,10 @@ Role: Programmer - Code
 
 Goal: Write code - core features
 
-* ~~Implement User Stories
-* ~~Test-driven workflow
-* ~~Implementation Cycle - Test, Fix, Extend, Improve
-* ~~Implement all core features
+* ~~Implement User Stories~~
+* ~~Test-driven workflow~~
+* ~~Implementation Cycle - Test, Fix, Extend, Improve~~
+* ~~Implement all core features~~
 
 
 
@@ -42,7 +42,7 @@ Goal: Write code - core features
 
 
 ### Implement User Stories
-All done
+
 
 
 ### Test-driven workflow
@@ -53,4 +53,4 @@ For test-driven, we have created a test course under the Easel project to test i
 
 
 ### Implement all core features
-All done
+
