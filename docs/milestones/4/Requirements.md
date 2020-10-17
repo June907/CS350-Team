@@ -1,6 +1,6 @@
 # Milestone 4. Functionality Complete- Requirements
 
-##Developer: Erik Halenkamp
+## Developer: Erik Halenkamp
 
 ## PROJECT INFO
 
