@@ -1,13 +1,11 @@
-
-{% load static %}
+{% extends 'project/base.html' %}
 <html>
 
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/studentBase.css' %}">
+    
 </head>
 
 <body>
@@ -27,21 +25,22 @@
             <a href="#clients">Assignments</a>
             <a href="#contact">Contact</a>
           </div>
-        <h1>Discussion Board</h1>
+        <h1>Assignment Page</h1>
         <h2>Hi {{ user.username}}</h2>
         {% block content %}
-          {% for Assignment in Assignments %}
+        
+          {% for assignment in object_list %}
           
-            
-            <p>{{ Assignment.duedate }}</p>
+            <p>{{assignment.title }}</p>
+            <p>{{ assignment.due_date }}</p>
 
           </div>
           
           {% endfor %}
-          
+        {% endblock content %}
 
           </div>
-        {% endblock content %}  
+         
 
     </div>
 

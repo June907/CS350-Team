@@ -25,7 +25,7 @@ class courseAddView(CreateView):
     model=Course
     fields=['title']
     
-    success_url = '/'
+    success_url =reverse_lazy('users/studentPage')
     
     def form_valid(self, form):
         form.instance.instructor = self.request.user
@@ -59,7 +59,7 @@ class discussionUpdateView(UpdateView):
 class discussionDeleteView(DeleteView):
     model=Post
     template_name='users/discussion_delete.html'
-    success_url= reverse_lazy('users/discussion')
+    success_url= reverse_lazy('discussion')
 
 class assignmentView(ListView):
     model=Assignment
@@ -69,7 +69,7 @@ class assignmentCreateView(CreateView):
     model=Assignment
     template_name='users/assignment_create.html'
     fields=['title','due_date', 'points_possible']
-    success_url=reverse_lazy('users/assignment')
+    success_url=reverse_lazy('assignment')
     
 
     
