@@ -14,11 +14,9 @@
 
 * File: docs/milestones/4/Test.md
 
-* URL: https://github.com/Twitter-Clone/twitter-clone-documentation/blob/master/milestone-4/Test.md
+* URL: https://github.com/June907/CS350-Team/blob/master/docs/milestones/4/Test.md
 
-* Documents: Documents/Twitter-Clone
-
-* Git Repo: Twitter-Clone
+* Git Repo: CS350-Team
 
 
 
@@ -36,21 +34,19 @@ Goal: Continuous integration
 
 
 
-## Twitter-Clone - Continuous integration
+## Easel - Continuous integration
 
 ### Build and test with every push
-* For milestone 4, we were able to test that our views were working. 
-* Views that we were able to get working were user_list, user_detail, and tweet_list.
-* views.py can be found at: https://github.com/Twitter-Clone/twitter-clone-api/blob/master/tcapi/views.py
+* For milestone 4, tested our different views.
+* Views that we were able to get working were home and about.
+* views.py can be found at: https://github.com/June907/CS350-Team/blob/master/project/project/views.py
 * We implemented tests that cover the different views.
-* One major issue that we faced was getting all of our settings configured. We had issues with the API not working correctly, so manual testing was definately used here.
+* We are still working on completing the implementation and testing of several views.
 
 
 ### Implement Test Coverage
-* For test coverage, we have a CI/CD pipeline that was created using Github Actions. 
-* The CI/CD pipleine has two jobs which are located in two of our repositories. 
-* The first job is for building the docker container. This would include updating it when changes have been made. 
-* The second job is responsible for making sure that we are writing clean Python code that follow basic Pep8 standards. 
-* Django testing is done mainly through so called 'second job'.
-* Github Action for Docker container: https://github.com/Twitter-Clone/twitter-clone-api/actions
-* Github Actions for clean python code: https://github.com/Twitter-Clone/twitter-clone-frontend/actions
+*
+*
+*
+*
+*
