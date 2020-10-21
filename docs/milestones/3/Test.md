@@ -1,6 +1,6 @@
 # Milestone 3. Core Features Implemented - Test
 
-## Tester: Yusu fKortobi
+## Tester: Yusuf Kortobi
 
 
 ## PROJECT INFO - Easel
