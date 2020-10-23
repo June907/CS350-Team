@@ -38,5 +38,5 @@ Goal: Oversee Code and Test Completion
 * Revamped URL Path (10/23/20)
   * Each page will have varying CRUD permissions based on whether user is a student or instructor of the course in question
   * ![Revamped Student URL Path](/docs/milestones/5/studenturlrevamp.png)
-  * ![Revamped Instructor URL Path](/docs/milestones/5/studenturlrevamp.png)
+  * ![Revamped Instructor URL Path](/docs/milestones/5/instructorurlrevamp.png)
 
