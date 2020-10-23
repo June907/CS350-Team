@@ -2,7 +2,7 @@ from django.views.generic import ListView,DetailView,TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import *
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
 
@@ -19,7 +19,18 @@ def about(request):
     }
     return render(request, 'project/about.html', context)
 
+def coursehome(request,course_id):
+    course = get_object_or_404(Course, pk=course_id)
+    if course in Course.objects.filter(group__in = request.user.groups.all()):
+        return render(request, 'project/coursehome.html', {'course': course})
+    else:
+        return render(request, 'project/insufficientperms.html')
+    
+    
 
+class courses(ListView):
+    def get_queryset(self):
+        return Course.objects.filter(group__in = self.request.user.groups.all())
 
 class courseAddView(CreateView):
     model=Course

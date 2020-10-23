@@ -1,0 +1,23 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+{% if user.username != "" %}
+<h2>{{ user.username }}'s Courses:</h2>
+<ul>
+    {% for course in object_list %}
+    {% if course.instructor == user %}
+    <li>
+        <h3><a href="{{ course.id }}">{{ course.title }}</a> - Instructor</h3>
+    </li>
+
+    {% else %}
+    <li>
+        <h3><a href="{{ course.id }}">{{ course.title }}</a></h3>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% else %}
+<h3>You must be <a href="/login">logged in</a> to view this page.</h3>
+{% endif %}
+{% endblock content %}
