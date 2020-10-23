@@ -11,14 +11,12 @@
 
 
 
-* File: Milestone-4/Design.md
-
-* URL: https://github.com/June907/CS350-Team/edit/master/docs/milestones/5/Design.md
+* File: docs/milestones/5/Design.md
 
 
 
 
-### Milestone 4. Functionality Complete
+### Milestone 5 - Oversee Code and Test Completion
 
 
 
