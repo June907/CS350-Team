@@ -95,7 +95,7 @@ def grades(request,course_id):
         'assignments': assignments,
         'course': course,
         'submissions': submissions,
-        'points': [pointsreceived,totalpoints,100*pointsreceived/totalpoints],
+        'points': [pointsreceived,totalpoints,round(100*pointsreceived/totalpoints,2)],
     }
     return render(request, 'project/grades.html', context)
 
