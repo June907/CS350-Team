@@ -11,14 +11,12 @@
 
 
 
-* File: Milestone-4/Design.md
-
-* URL: https://github.com/June907/CS350-Team/edit/master/docs/milestones/5/Design.md
+* File: docs/milestones/5/Design.md
 
 
 
 
-### Milestone 4. Functionality Complete
+### Milestone 5 - Oversee Code and Test Completion
 
 
 
@@ -36,7 +34,7 @@ Goal: Oversee Code and Test Completion
 ## Design Changes
 
 * Revamped URL Path (10/23/20)
-** ![Revamped Student URL Path](/5/studenturlrevamp.png)
-** ![Revamped Instructor URL Path](/5/instructorurlrevamp.png)
-** Each page will have varying CRUD permissions based on whether user is a student or instructor of the course in question
+  * Each page will have varying CRUD permissions based on whether user is a student or instructor of the course in question
+  * ![Revamped Student URL Path](/docs/milestones/5/studenturlrevamp.png)
+  * ![Revamped Instructor URL Path](/docs/milestones/5/instructorurlrevamp.png)
 
