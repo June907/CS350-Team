@@ -1,0 +1,17 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+{% for group in user.groups.all %}
+{% if group.name == course.title %}
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/assignments">Assignments</a> > {{ assignment.title }}</h2>
+<br>
+
+{% if submission %}
+
+{% else %}
+
+{% endif %}
+
+{% endif %}
+{% endfor %}
+{% endblock content %}

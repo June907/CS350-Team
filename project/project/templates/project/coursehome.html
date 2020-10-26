@@ -1,6 +1,12 @@
 {% extends 'project/base.html' %}
 
 {% block content %}
-<h1>Dashboard</h1>
-<h2>Hi {{ user.username}}, welcome to {{ course.title }}</h2>
+{% for group in user.groups.all %}
+{% if group.name == course.title %}
+<h2>Welcome to {{ course.title }}</h2>
+<br>
+<h3><a href="assignments">Assignments</a></h3>
+<h3><a href="grades">Grades</a></h3>
+{% endif %}
+{% endfor %}
 {% endblock content %}
