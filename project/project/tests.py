@@ -13,13 +13,13 @@ def create_test_user():
 
 
 
-class UserTests(TestCase):
+#class UserTests(TestCase):
 
-    def setUp(self):
-        self.user=get_user_model().objects.create_user(username='TestUser',password='password')
-    def check_user_name(self,pk,name):
-        check=User.objects.get(pk=pk)
-        self.assertEqual(check.name,name)                                                                                                                                                                                                                                                                                   
+   # def setUp(self):
+    #    self.user=get_user_model().objects.create_user(username='TestUser',password='password')
+  #  def check_user_name(self,pk,name):
+        #check=User.objects.get(pk=pk)
+       # self.assertEqual(check.name,name)                                                                                                                                                                                                                                                                                   
  # This is for Course testing
 class CourseTest(TestCase):
 
@@ -138,6 +138,34 @@ class PostTest(TestCase):
     def test_delete_post(self):
         delete_post('testpost')
         self.check_num_post(0)
+
+class PostViewTests(TestCase):
+    
+    def create_test_user(self):
+        args=dict(username='testuser', password='password')
+        self.user=get_user_model().objects.create_user(**args)
+
+    def login(self):
+        response=self.client.login(username='testuser', password='password')
+        self.assertEqual(response,True)
+
+    def setUp(self):
+        self.create_test_user()
+        self.post=add_post('testpost',None,self.user,'somepost')
+        self.login()
+
+    def test_get_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(), '/post/1')
+
+
+    
+
+
+
+    
+
+
+
 
     
 

@@ -1,0 +1,24 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+{% for group in user.groups.all %}
+{% if group.name == course.title %}
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Discussion</h2>
+<br>
+<ul>
+    {% for Post in discussion %}
+    {% if course.instructor == user %}
+    <li>
+        <h3><a href="discussion/{{ Post.id }}">{{ Post.title }}</a></h3>
+    </li>
+
+    {% else %}
+    <li>
+        <h3><a href="discussion/{{ Post.id }}">{{ Post.title }}</a></h3>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+{% endfor %}
+{% endblock content %}

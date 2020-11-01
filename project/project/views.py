@@ -99,6 +99,40 @@ def grades(request,course_id):
     }
     return render(request, 'project/grades.html', context)
 
+@login_required
+def discussion(request,course_id):
+    course=get_object_or_404(Course, pk=course_id)
+    context = {
+        'discussion': Post.objects.filter(course = course),
+        'course': course,
+    }
+    return render(request, 'project/discussion.html', context)
+
+@login_required
+def discussionhome(request,course_id,discussion_id):
+    course = get_object_or_404(Course, pk=course_id)
+    discussion = get_object_or_404(Post, pk=discussion_id)
+    #discussion = Post.objects.get(title=title, author = request.user)      
+    context = {
+        'discussion': discussion,
+        'course': course,
+        
+    }
+    return render(request, 'project/discussionhome.html', context)
+
+class discussionCreateView(CreateView):
+    model=Post
+    template_name='project/discussion_new.html'
+    fields=['title', 'author', 'body']
+    
+class discussionDetailView(DetailView):
+    model=Post
+    template_name='users/discussion_detail.html'
+    
+
+
+
+
 class TestClassView(TemplateView):
     template_name='users/TestClass.html'
 
@@ -106,14 +140,9 @@ class discussionView(ListView):
     model=Post
     template_name='users/discussion.html'
 
-class discussionDetailView(DetailView):
-    model=Post
-    template_name='users/discussion_detail.html'
 
-class discussionCreateView(CreateView):
-    model=Post
-    template_name='users/discussion_new.html'
-    fields=['title', 'author', 'body']
+
+
 
 class discussionUpdateView(UpdateView):
     model=Post
