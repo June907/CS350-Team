@@ -1,24 +1,15 @@
-{% extends 'project/base.html' %}
+{% extends 'project/coursebase.html' %}
 
 {% block content %}
 {% for group in user.groups.all %}
 {% if group.name == course.title %}
+{% if user == course.instructor or user.id == student.id %}
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Grades</h2>
-
 <br>
-
-{% if course.instructor == user %}
-<h3><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></h3>
-
-{% else %}
-
 <table style="width:100%; border-spacing: 15px;">
     <tr>
         <th>
             <h4>Name</h4>
-        </th>
-        <th>
-            <h4>Due</h4>
         </th>
         <th>
             <h4>Grade</h4>
@@ -29,7 +20,6 @@
 
     <tr>
         <td><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></td>
-        <td>{{ assignment.due_date }}</td>
         {% for submission in submissions %}
         {% if submission.assignment == assignment %}
         <td>{{ submission.points_received }} / {{ assignment.points_possible }}</td>
@@ -42,9 +32,9 @@
 </table>
 <br>
 <h3>Grade: {{ points.2 }}% ({{ points.0 }} / {{ points.1 }} Points)</h3>
-
+{% else %}
+<h2>Insufficient Permissions to View This Page</h2>
 {% endif %}
-
 {% endif %}
 {% endfor %}
 

@@ -1,0 +1,9 @@
+{% extends 'project/coursebase.html' %}
+
+{% block content %}
+
+<form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" value="{{ request.path }}">
+</form>
+{% endblock content %}

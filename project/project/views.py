@@ -33,7 +33,7 @@ class courseAddView(CreateView):
     model=Course
     fields=['title']
     
-    success_url =reverse_lazy('users/studentPage')
+    success_url = reverse_lazy('users/studentPage')
     
     def form_valid(self, form):
         form.instance.instructor = self.request.user
@@ -68,10 +68,22 @@ def assignmenthome(request,course_id,assignment_id):
     return render(request, 'project/assignmenthome.html', context)
 
 @login_required
-def grades(request,course_id):
+def instructorgrades(request, course_id):
     course = get_object_or_404(Course, pk=course_id)
+    students = User.objects.filter(groups__name=course.title)
+    context = {
+        'students': students,
+        'course': course,
+    }
+    return render(request, 'project/instructorgrades.html', context)
+
+@login_required
+def individualgrades(request,course_id,student_id):
+    course = get_object_or_404(Course, pk=course_id)
+    student = get_object_or_404(User, pk=student_id)
     assignments = []
     submissions = []
+    
     try:
         assignments = Assignment.objects.filter(course = course)
     except:
@@ -82,7 +94,7 @@ def grades(request,course_id):
     for assignment in assignments:
         totalpoints = totalpoints + assignment.points_possible
         try:
-            submissions.append(Submission.objects.get(assignment = assignment, student = request.user))
+            submissions.append(Submission.objects.get(assignment = assignment, student = student))
         except:
             pass
     
@@ -90,60 +102,78 @@ def grades(request,course_id):
 
     for submission in submissions:
         pointsreceived = pointsreceived + submission.points_received
+
     
     context = {
         'assignments': assignments,
+        'student': student,
         'course': course,
         'submissions': submissions,
         'points': [pointsreceived,totalpoints,round(100*pointsreceived/totalpoints,2)],
     }
-    return render(request, 'project/grades.html', context)
+    
+    return render(request, 'project/individualgrades.html', context)
 
-class TestClassView(TemplateView):
-    template_name='users/TestClass.html'
+#class TestClassView(TemplateView):
+#    template_name='users/TestClass.html'
+#
+#class discussionView(ListView):
+#    model=Post
+#    template_name='users/discussion.html'
 
-class discussionView(ListView):
-    model=Post
-    template_name='users/discussion.html'
-
-class discussionDetailView(DetailView):
-    model=Post
-    template_name='users/discussion_detail.html'
-
-class discussionCreateView(CreateView):
-    model=Post
-    template_name='users/discussion_new.html'
-    fields=['title', 'author', 'body']
-
-class discussionUpdateView(UpdateView):
-    model=Post
-    template_name='users/discussion_edit.html'
-    fields=['title', 'body']
-
-class discussionDeleteView(DeleteView):
-    model=Post
-    template_name='users/discussion_delete.html'
-    success_url= reverse_lazy('discussion')
+#class discussionDetailView(DetailView):
+#    model=Post
+#    template_name='users/discussion_detail.html'
+#
+#class discussionCreateView(CreateView):
+#    model=Post
+#    template_name='users/discussion_new.html'
+#    fields=['title', 'author', 'body']
+#
+#class discussionUpdateView(UpdateView):
+#    model=Post
+#    template_name='users/discussion_edit.html'
+#    fields=['title', 'body']
+#
+#class discussionDeleteView(DeleteView):
+#    model=Post
+#    template_name='users/discussion_delete.html'
+#    success_url= reverse_lazy('discussion')
     
 class assignmentCreateView(CreateView):
     model=Assignment
-    template_name='users/assignment_create.html'
-    fields=['title','due_date', 'points_possible']
-    success_url=reverse_lazy('assignment')
+    fields=['title', 'details', 'points_possible']
+    success_url=reverse_lazy('courses')
     
+    def setup(self, request, course_id):
+        self.course = get_object_or_404(Course, pk=course_id)
+        self.request = request
+        if not (request.user == self.course.instructor):
+            return render(request, '')
 
+    def form_valid(self,form):
+        form.instance.course = self.course
+        return super().form_valid(form)
     
+class assignmentUpdateView(UpdateView):
+    model=Assignment
+    fields=['title', 'details', 'points_possible']
+    success_url=reverse_lazy('courses')
+    
+class assignmentDeleteView(DeleteView):
+    model=Assignment
+    
+    success_url=reverse_lazy('courses')
 
-def studentListView(request,url_name):
-    model=Course
-    url_name=Course.title
-    
-    
-    context = {
-        'students': User.objects.filter(groups__name=Course.title),
-        'url_name': url_name
-    }
-    return render(request, 'users/studentList.html', context)
+#def studentListView(request,url_name):
+#    model=Course
+#    url_name=Course.title
+#    
+#    context = {
+#        'students': User.objects.filter(groups__name=Course.title),
+#        'url_name': url_name
+#    }
+#    return render(request, 'users/studentList.html', context)
 
 
 

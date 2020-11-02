@@ -1,15 +1,29 @@
-{% extends 'project/base.html' %}
+{% extends 'project/coursebase.html' %}
 
 {% block content %}
 {% for group in user.groups.all %}
 {% if group.name == course.title %}
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/assignments">Assignments</a> > {{ assignment.title }}</h2>
 <br>
+<h4>Points Possible: {{ assignment.points_possible }}</h4>
+{% if submission %}
+<h4>Points Received: {{ submission.points_received }}</h4>
+{% endif %}
+<br>
+<p>{{ assignment.details }}</p>
 
 {% if submission %}
 
 {% else %}
 
+{% endif %}
+
+{% if user == course.instructor %}
+<h4>Instructor Commands</h4>
+<ul>
+    <li><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/update">Update Assignment</a></li>
+    <li><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/delete">Delete Assignment</a></li>
+</ul>
 {% endif %}
 
 {% endif %}

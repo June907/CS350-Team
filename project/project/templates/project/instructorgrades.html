@@ -1,0 +1,27 @@
+{% extends 'project/coursebase.html' %}
+
+{% block content %}
+{% for group in user.groups.all %}
+{% if group.name == course.title %}
+{% if user == course.instructor %}
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Grades</h2>
+
+<br>
+
+<h2>Student List</h2>
+<ul>
+    {% for student in students %}
+    {% if student != user %}
+    <li>
+        <h4><a href="grades/{{ student.id }}">{{ student.username }}</a></h4>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% else %}
+<h2><a href="grades/{{ user.id }}">View Grades For {{ user.username }}</a></h2>
+{% endif %}
+{% endif %}
+{% endfor %}
+
+{% endblock content %}

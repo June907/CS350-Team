@@ -1,0 +1,17 @@
+{% extends 'project/base.html' %}
+
+{% block content %}{% endblock %}
+
+{% block navigation %}
+<div class="col-md-4">
+    <div class="content-section">
+        <h3>{{ course.title }} Navigation</h3>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-light"><a href="/courses/{{ course.id }}/assignments">Assignments</a></li>
+            <li class="list-group-item list-group-item-light"><a href="/courses/{{ course.id }}/grades">Grades</a></li>
+            <li class="list-group-item list-group-item-light">Coming Soon</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

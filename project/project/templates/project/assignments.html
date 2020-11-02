@@ -1,4 +1,4 @@
-{% extends 'project/base.html' %}
+{% extends 'project/coursebase.html' %}
 
 {% block content %}
 {% for group in user.groups.all %}
@@ -7,18 +7,15 @@
 <br>
 <ul>
     {% for assignment in assignments %}
-    {% if course.instructor == user %}
     <li>
         <h3><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></h3>
     </li>
-
-    {% else %}
-    <li>
-        <h3><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></h3>
-    </li>
-    {% endif %}
     {% endfor %}
 </ul>
+{% if user == course.instructor %}
+<br>
+<h4><a href="/courses/{{ course.id }}/assignments/add">Add Assignment</a></h4>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endblock content %}
