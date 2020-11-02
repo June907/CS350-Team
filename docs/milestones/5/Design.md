@@ -24,10 +24,10 @@ Role: Programmer - Design
 
 Goal: Oversee Code and Test Completion
 
-* ~~Implement all required features
-* ~~Improve code structure
+* ~~Implement all required features~~
+* ~~Improve code structure~~
 * Ensure test quality
-* ~~Measure all remaining work
+* ~~Measure all remaining work~~
 
 ## Implement All Required Features
 
