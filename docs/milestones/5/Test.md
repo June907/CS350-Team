@@ -18,7 +18,9 @@ Role: QA Engineer - Test
 Goal: Acceptance testing
 
 ~~## Work with Requirements specialist~~
+
 ~~## Identify unmet customer needs~~
+
 ~~## Develop client acceptance test~~
 
 All the tests are up to running, which cover the main models for testuser to test create update delete post, course etc.
