@@ -1,0 +1,13 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+{% for group in user.groups.all %}
+{% if group.name == course.title %}
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/discussion">Discussion</a> > {{ discussion.title }}</h2>
+<br>
+
+{{discussion.body}}
+
+{% endif %}
+{% endfor %}
+{% endblock content %}
