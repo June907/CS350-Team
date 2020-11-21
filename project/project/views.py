@@ -33,7 +33,7 @@ class courseAddView(CreateView):
     model=Course
     fields=['title']
     
-    success_url = reverse_lazy('users/studentPage')
+    success_url = reverse_lazy('courses')
     
     def form_valid(self, form):
         form.instance.instructor = self.request.user
@@ -41,6 +41,8 @@ class courseAddView(CreateView):
         form.instance.group = new_group
         self.request.user.groups.add(new_group)
         return super().form_valid(form)
+
+
 
 @login_required
 def assignments(request,course_id):
@@ -142,7 +144,7 @@ class discussionCreateView(CreateView):
     
 class discussionDetailView(DetailView):
     model=Post
-    template_name='users/discussion_detail.html'
+    template_name='project/discussion_detail.html'
     
 
 

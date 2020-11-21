@@ -28,6 +28,7 @@ urlpatterns= [
     path('courses/<int:course_id>/discussion', views.discussion, name='discussion'),
     path('courses/<int:course_id>/discussion/<int:discussion_id>', views.discussionhome, name='discussionhome'),
     path('courses/<int:course_id>/discussion/add/', discussionCreateView.as_view(template_name='project/discussion_new.html') , name='addDiscussion'),
+    path('courses/<int:course_id>/discussion/<int:pk>',discussionDetailView.as_view(template_name='project/discussion_detail.html'),name='discussion_detail'),
 #   path('studentPage/TestClass/', TestClassView.as_view(),name='TestClass'),
 #   path('studentPage/TestClass/discussion',discussionView.as_view(), name='discussion'),
 #   path('studentPage/TestClass/discussion/<int:pk>',discussionDetailView.as_view(), name='discussion_detail'),
