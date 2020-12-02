@@ -1,8 +1,13 @@
 {% extends 'project/coursebase.html' %}
 
 {% block content %}
+{% if object.course.instructor == user or object.instructor == user or self.course.instructor == user %}
 <form action="" method="POST">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save" value="{{ request.path }}">
 </form>
+{% else %}
+<h4>Insufficient Permission to View This Page</h4>
+<p><a href="/">Home</a></p>
+{% endif %}
 {% endblock content %}

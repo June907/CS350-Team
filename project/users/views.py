@@ -20,4 +20,4 @@ def studentPage(request):
     context = {
         'courses': Course.objects.filter(group__in = request.user.groups.all())
     }
-    return render(request, 'project/courses.html', context)
+    return render(request, 'users/redirecthome.html', context)

@@ -122,23 +122,11 @@ class assignmentUpdateView(UpdateView):
     model=Assignment
     fields=['title', 'details', 'points_possible']
     
-    def setup(self, request, course_id):
-        self.course = get_object_or_404(Course, pk=course_id)
-        self.request = request
-        if not (request.user == self.course.instructor):
-            return render(request, '')
-    
     def get_success_url(self):
         return reverse_lazy('assignmenthome', args=[self.object.course.id, self.object.id])
     
 class assignmentDeleteView(DeleteView):
     model=Assignment
-    
-    def setup(self, request, course_id):
-        self.course = get_object_or_404(Course, pk=course_id)
-        self.request = request
-        if not (request.user == self.course.instructor):
-            return render(request, '')
     
     def get_success_url(self):
         return reverse_lazy('assignments', args=[self.object.course.id])

@@ -10,7 +10,7 @@ urlpatterns= [
 #    path('',HomePageView.as_view(),name='home'),
     
     path('', views.home, name='home'),
-    path('about/', views.about, name='about'),
+    path('courselist/', views.about, name='about'),
     path('accounts/register/', user_views.register, name='register'),
     path('accounts/login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('accounts/logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
@@ -22,7 +22,7 @@ urlpatterns= [
     path('courses/<int:course_id>/join', views.coursejoin, name='joincourse'),
     path('courses/<int:course_id>/leave', views.courseleave, name='leavecourse'),
     path('courses/<int:course_id>/assignments', views.assignments, name='assignments'),
-    path('courses/<int:course_id>/assignments/add', assignmentCreateView.as_view(template_name='project/assignment_form.html'), name='newassignment'),
+    path('courses/<int:course_id>/assignments/add', assignmentCreateView.as_view(template_name='project/discussion_form.html'), name='newassignment'),
     path('courses/<int:course_id>/assignments/<int:assignment_id>', views.assignmenthome, name='assignmenthome'),
     path('courses/<int:course_id>/assignments/<pk>/update', assignmentUpdateView.as_view(template_name='project/assignment_form.html'), name='updateassignment'),
     path('courses/<int:course_id>/assignments/<pk>/delete', assignmentDeleteView.as_view(template_name='project/assignment_form.html'), name='deleteassignment'),

@@ -20,18 +20,22 @@
 
     <tr>
         <td><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}">{{ assignment.title }}</a></td>
-        {% for submission in submissions %}
-        {% if submission.assignment == assignment %}
-        <td>
-            {% if course.instructor == user %}
-            <a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/{{ submission.id}}/edit">{{ submission.points_received }}</a> / {{ assignment.points_possible }}
-            {% else %}
-            {{ submission.points_received }} / {{ assignment.points_possible }}
-            {% endif %}
-        </td>
 
-        {% endif %}
-        {% endfor %}
+        <td style="width:10px; text-align:right; padding-right:5px;">
+            {% for submission in submissions %}
+            {% if submission.assignment == assignment %}
+            {% if course.instructor == user %}
+            <a href=" /courses/{{ course.id }}/assignments/{{ assignment.id }}/{{ submission.id}}/edit">{{ submission.points_received }}</a>
+            {% else %}
+            {{ submission.points_received }}
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+        </td>
+        <td>/ {{ assignment.points_possible }}</td>
+
+
+
     </tr>
 
     {% endfor %}
