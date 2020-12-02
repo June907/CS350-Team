@@ -1,0 +1,15 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Discussion</h2>
+<br>
+
+<div class="post-entry">
+    <h2>{{ post.title }}</a></h2>
+    <p>{{ post.body }}</p>
+
+  </div>
+
+
+{% endblock content %}
