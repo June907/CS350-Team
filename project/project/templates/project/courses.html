@@ -1,8 +1,12 @@
 {% extends 'project/base.html' %}
 
 {% block content %}
-<h2><a href="/studentPage">{{ user.username }}'s</a> Courses</h2>
+{% if message %}
+<h4>{{ message }}</h4>
+{% else %}
+<h2>{{ user.username }}'s Courses</h2>
 <br>
+{% endif %}
 <ul>
     {% for course in courses %}
     {% if course.instructor == user %}

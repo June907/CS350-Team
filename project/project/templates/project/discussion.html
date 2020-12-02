@@ -5,20 +5,31 @@
 {% if group.name == course.title %}
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Discussion</h2>
 <br>
+<h4><a href="/courses/{{ course.id }}/discussion/add">New Post</a></h4>
+<br>
 <ul>
-    {% for Post in discussion %}
-    {% if course.instructor == user %}
+    {% for Post in discussion reversed %}
     <li>
-        <h3><a href="discussion/{{ Post.id }}">{{ Post.title }}</a></h3>
+        <h3>{{ Post.title }} ({{Post.author}})</h3>
+        <br>
+        <ul>
+            <li>
+                <p>{{ Post.body }}</p>
+            </li>
+            {% if Post.author == user or user == course.instructor %}
+            <li>
+                <p>({{ Post.time }}) <a href="/courses/{{ course.id }}/discussion/{{ Post.id }}/delete">Delete Post</a></p>
+            </li>
+            {% else %}
+            <li>
+                <p>({{ Post.time }})</p>
+            </li>
+            {% endif %}
+        </ul>
     </li>
-
-    {% else %}
-    <li>
-        <h3><a href="discussion/{{ Post.id }}">{{ Post.title }}</a></h3>
-    </li>
-    {% endif %}
     {% endfor %}
 </ul>
 {% endif %}
 {% endfor %}
+
 {% endblock content %}

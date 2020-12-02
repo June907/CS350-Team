@@ -17,19 +17,6 @@
     <div class="main">
         <h1>Dashboard</h1>
         <h2>Hi {{ user.username}}</h2>
-        <br>
-        <h2>Courses:</h2>
-        <br>
-        {% if courses %}
-        {% for course in courses %}
-        {% if course.instructor == user %}
-        <h3><a href="{{ course.title }}">{{ course.title }}</a> - Instructor</h3>
-
-        {% else %}
-        <h3>{{ course.title }} - Student</h3>
-        {% endif %}
-        {% endfor %}
-        {% endif %}
     </div>
 
 

@@ -1,9 +1,33 @@
 {% extends 'project/base.html' %}
 
 {% block content %}
-<h1>Current Registered Users</h1>
-{% for user in users %}
-<h2>{{ user.username }}</h2>
-<p>ID: {{ user.id }}</p>
-{% endfor %}
+<h1>Current Courses</h1>
+<h4 style="color: red;">Warning: Leaving a course for which you are the instructor will delete the course.</h4>
+<table>
+    <tr>
+        <th style="padding: 5px;">Course Name</th>
+        <th style="padding: 5px;">Instructor</th>
+    </tr>
+    {% for course in courses %}
+    <tr>
+        <td style="padding: 5px;">
+            {{ course.title }}
+        </td>
+        <td style="padding: 5px;">
+            {{ course.instructor }}
+        </td>
+        {% if course.group not in groups %}
+        <td style="padding-left: 20px;">
+            <a href="/courses/{{ course.id }}/join">Join</a>
+        </td>
+        {% else %}
+        <td style="width:70px"></td>
+        <td style="padding: 5px;">
+            <a href="/courses/{{ course.id }}/leave">Leave</a>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
 {% endblock content %}

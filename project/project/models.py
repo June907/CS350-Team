@@ -22,7 +22,7 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     body = models.TextField()
-
+    time = models.DateTimeField()
     def __str__(self):
         return self.title
 
@@ -40,14 +40,12 @@ class Assignment(models.Model):
     
     
 class Submission(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, null=True)
+    body = models.TextField(null=True)
     assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
     student = models.ForeignKey(User, on_delete=models.CASCADE)
     time = models.DateTimeField()
-    file = models.FileField()
     points_received = models.DecimalField(max_digits=5,decimal_places=2)
     
-    def __str__(self):
-        return self.title
 
 # Create your models here.

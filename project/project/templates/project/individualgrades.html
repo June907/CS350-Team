@@ -4,7 +4,7 @@
 {% for group in user.groups.all %}
 {% if group.name == course.title %}
 {% if user == course.instructor or user.id == student.id %}
-<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Grades</h2>
+<h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/grades">Grades</a> > {{ student.username }}</h2>
 <br>
 <table style="width:100%; border-spacing: 15px;">
     <tr>
@@ -19,10 +19,17 @@
     {% for assignment in assignments %}
 
     <tr>
-        <td><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></td>
+        <td><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}">{{ assignment.title }}</a></td>
         {% for submission in submissions %}
         {% if submission.assignment == assignment %}
-        <td>{{ submission.points_received }} / {{ assignment.points_possible }}</td>
+        <td>
+            {% if course.instructor == user %}
+            <a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/{{ submission.id}}/edit">{{ submission.points_received }}</a> / {{ assignment.points_possible }}
+            {% else %}
+            {{ submission.points_received }} / {{ assignment.points_possible }}
+            {% endif %}
+        </td>
+
         {% endif %}
         {% endfor %}
     </tr>

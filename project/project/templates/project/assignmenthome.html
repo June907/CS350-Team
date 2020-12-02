@@ -5,18 +5,22 @@
 {% if group.name == course.title %}
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/assignments">Assignments</a> > {{ assignment.title }}</h2>
 <br>
-<h4>Points Possible: {{ assignment.points_possible }}</h4>
 {% if submission %}
-<h4>Points Received: {{ submission.points_received }}</h4>
+<h4>Points: {{ submission.points_received }} / {{ assignment.points_possible }}</h4>
+{% else %}
+<h4>Points Possible: {{ assignment.points_possible }}</h4>
 {% endif %}
 <br>
 <p>{{ assignment.details }}</p>
-
-{% if submission %}
-
-{% else %}
-
-{% endif %}
+<div style="border:2px solid black; padding:10px">
+    {% if submission %}
+    <h4>{{ submission.title }} </h4>
+    <h6><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/add">Resubmit</a></h6>
+    <p>{{ submission.body }}</p>
+    {% else %}
+    <h4><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/add">Submit Assignment</a></h4>
+    {% endif %}
+</div>
 
 {% if user == course.instructor %}
 <h4>Instructor Commands</h4>

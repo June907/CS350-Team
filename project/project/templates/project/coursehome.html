@@ -8,6 +8,11 @@
 <h3><a href="assignments">Assignments</a></h3>
 <h3><a href="grades">Grades</a></h3>
 <h3><a href="discussion">Discussion</a></h3>
+
+{% if user == course.instructor %}
+<br>
+<p><a href="/courses/{{ course.id }}/delete">Delete Course</a></p>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endblock content %}

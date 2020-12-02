@@ -6,7 +6,7 @@
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > Assignments</h2>
 <br>
 <ul>
-    {% for assignment in assignments %}
+    {% for assignment in assignments reversed %}
     <li>
         <h3><a href="assignments/{{ assignment.id }}">{{ assignment.title }}</a></h3>
     </li>

@@ -1,0 +1,21 @@
+{% extends 'project/coursebase.html' %}
+
+{% block content %}
+
+{% if request.user == object.assignment.course.instructor %}
+<p>Points Possible: {{ object.assignment.points_possible }}</p>
+
+<form action="" method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save" value="{{ request.path }}">
+</form>
+<br>
+
+<h3>{{ object.title }}</h3>
+<p>by {{ object.student }}</p>
+<p>{{ object.body }}</p>
+
+{% else %}
+<h4>Insufficient Permissions to View This Page</h4>
+{% endif %}
+{% endblock content %}
