@@ -1,6 +1,6 @@
-# Milestone 4. Functionality Complete - Design
+# Milestone 4 - Design
 
-
+## Developer - Yusuf Kortobi
 ## PROJECT INFO
 
 
@@ -11,42 +11,34 @@
 
 
 
-* File: Milestone-4/Design.md
-
-* URL: https://github.com/June907/CS350-Team/edit/master/docs/milestones/4/Design.md
+* File: docs/milestones/5/Design.md
 
 
 
 
-### Milestone 4. Functionality Complete
+### Milestone 5 - Customer Acceptance Approval
 
 
 
 Role: Programmer - Design
 
-Goal: Write code - core features
+Goal: Oversee Code and Test Completion
 
-* ~~Implement User Stories~~
-* ~~Test-driven workflow~~
-* ~~Implementation Cycle - Test, Fix, Extend, Improve~~
-* ~~Implement all core features~~
+* ~~Document Existing Design Patterns~~
+* ~~Document key APIs~~
+* ~~Build import/export for data~~
 
+## Document Existing Design Patterns
 
+* Design patters can be found through the do
 
-## Easel - Write code - core features
+  
+## Document key APIs
 
+* The interfaces we thought would be most important was the student and teacher view, giving a quick and easy way to design assignments and discussions
 
+## Build import/export for data
 
-### Implement User Stories
-
-
-
-### Test-driven workflow
-For testing, please login to TestUser, password as testingeasel. After you login you can be redireact to a studentPage, from there you can sign up classes using the course button on the left hand side menu(for now please sign up to TestClass). After you sigin up for a class, you can go to the class page from there you can go to discussion board to create you discussion. For assignment, you have to go to /assignment to see what assignment you have created, and go to /assignment/new to create a new assignment.
-
-### Implementation Cycle - Test, Fix, Extend, Improve
-For test-driven, we have created a test course under the Easel project to test if we can create a class successfully, moving on, we also created test discussion board to see if the CURD is working for all the discussion views. All the features above are implement successfully with test. However, creating an assignment for professor still returns error, and turn in assignment for students are still a issue, it will be fixed in the next milestone. 
-
-
-### Implement all core features
-
+* database and account data is used through sqlite and django admin.  Classes assignments and discussions are all ran through databases, and while they cant be imported they are kept track of through the django users app.
+  
+Overall, the website's core functionality is complete, and most remaining work will go into fleshing out the application to create a finished product.

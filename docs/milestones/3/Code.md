@@ -18,15 +18,11 @@
 
 Role: Programmer - Code
 
-Completed: Incremental development (Sprints)
+### Build simple app
 
-* Model implementation and database integration
-* Templates updated to include proper html and bootstrap
-* Views for home, about, register, and login pages
-* Register and log into user accounts
+simple pages app constructed and documented
 
-
-### Implement the features
+### Build simple test 
 
 Good to go
 
