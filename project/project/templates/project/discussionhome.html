@@ -6,7 +6,7 @@
 <h2><a href="/courses/{{ course.id }}">{{ course.title }}</a> > <a href="/courses/{{ course.id }}/discussion">Discussion</a> > {{ discussion.title }}</h2>
 <br>
 
-{{discussion.body}}
+{{ discussion.body|linebreaks }}
 
 {% endif %}
 {% endfor %}

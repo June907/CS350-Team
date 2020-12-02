@@ -11,12 +11,12 @@
 <h4>Points Possible: {{ assignment.points_possible }}</h4>
 {% endif %}
 <br>
-<p>{{ assignment.details }}</p>
+<p>{{ assignment.details|linebreaks }}</p>
 <div style="border:2px solid black; padding:10px">
     {% if submission %}
     <h4>{{ submission.title }} </h4>
     <h6><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/add">Resubmit</a></h6>
-    <p>{{ submission.body }}</p>
+    <p>{{ submission.body|linebreaks }}</p>
     {% else %}
     <h4><a href="/courses/{{ course.id }}/assignments/{{ assignment.id }}/add">Submit Assignment</a></h4>
     {% endif %}
