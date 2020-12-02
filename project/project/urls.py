@@ -16,7 +16,7 @@ urlpatterns= [
     path('accounts/logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     path('studentPage/',user_views.studentPage,name='studentPage'),
     path('courses/',views.courses, name='courses'),
-    path('courses/add/',courseAddView.as_view(template_name='project/course_add.html'),name='course_add'),
+    path('courses/add/',courseAddView.as_view(template_name='project/create_course.html'),name='course_add'),
     path('courses/<int:course_id>/', views.coursehome, name='coursehome'),
     path('courses/<pk>/delete', courseDeleteView.as_view(template_name='project/assignment_form.html'), name='deletecourse'),
     path('courses/<int:course_id>/join', views.coursejoin, name='joincourse'),
