@@ -173,13 +173,25 @@ def individualgrades(request,course_id,student_id):
     if totalpoints != 0:
         
         pointratio = pointsreceived/totalpoints
+        
+    lettergrade = ""
+    if pointratio < 59.5:
+        lettergrade = "F"
+    elif pointratio >= 59.5 and pointratio < 69.5:
+        lettergrade = "D"
+    elif pointratio >= 69.5 and pointratio < 79.5:
+        lettergrade = "C"
+    elif pointratio >= 79.5 and pointratio < 89.5:
+        lettergrade = "B"
+    elif pointratio >= 89.5:
+        lettergrade = "A"
     
     context = {
         'assignments': assignments,
         'student': student,
         'course': course,
         'submissions': submissions,
-        'points': [pointsreceived,totalpoints,round(100*pointratio,2)],
+        'points': [pointsreceived,totalpoints,round(100*pointratio,2),lettergrade],
     }
     
     return render(request, 'project/individualgrades.html', context)

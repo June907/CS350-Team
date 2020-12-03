@@ -7,28 +7,20 @@
 <br>
 <h4><a href="/courses/{{ course.id }}/discussion/add">New Post</a></h4>
 <br>
-<ul>
-    {% for Post in discussion reversed %}
-    <li>
-        <h3>{{ Post.title }} ({{Post.author}})</h3>
-        <br>
-        <ul>
-            <li>
-                <p>{{ Post.body }}</p>
-            </li>
-            {% if Post.author == user or user == course.instructor %}
-            <li>
-                <p>({{ Post.time }}) <a href="/courses/{{ course.id }}/discussion/{{ Post.id }}/delete">Delete Post</a></p>
-            </li>
-            {% else %}
-            <li>
-                <p>({{ Post.time }})</p>
-            </li>
-            {% endif %}
-        </ul>
-    </li>
-    {% endfor %}
-</ul>
+{% for Post in discussion reversed %}
+<div style="background-color:lightgray; padding:5px; border:1px solid black">
+    <h4>{{ Post.title }}</h4>
+    {% if Post.author == user or user == course.instructor %}
+    <p><b>{{ Post.author }}, {{ Post.time }} </b><a href="/courses/{{ course.id }}/discussion/{{ Post.id }}/delete">Delete Post</a></p>
+    <p>{{ Post.body }}</p>
+    {% else %}
+    <p><b>{{ Post.author }}, {{ Post.time }}</b></p>
+    <p>{{ Post.body }}</p>
+    {% endif %}
+</div>
+<br>
+{% endfor %}
+
 {% endif %}
 {% endfor %}
 
